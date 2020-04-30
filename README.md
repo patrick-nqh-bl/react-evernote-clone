@@ -1,4 +1,4 @@
-# Patrick's Project(Using React, Material UI,Firebase)
+# Patrick's Project(Using React, Material UI, Firebase)
 1. Re-code by me
 * Source video:
 > https://www.youtube.com/watch?v=I250xdtUvy8
@@ -32,6 +32,7 @@
       window.addEventListener('resize', myEfficientFn);
 
 * Remove HTML Tag:
+
       function removeHTMLTags (str) {
         return str.replace(/<[^>]*>?/gm, '');
       } 

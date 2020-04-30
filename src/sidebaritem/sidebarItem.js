@@ -34,7 +34,15 @@ class SidebarItemComponent extends React.Component {
           />
         </ListItem>
       </div>
-    )
+    );
+  }
+  
+  selectNote = (n, i) => this.props.selectNote(n, i);
+
+  deleteNote = note => {
+    if(window.confirm(`Are you sure you want to delete: ${note.title}`)) {
+      this.props.deleteNote(note);
+    }
   }
 }
 
