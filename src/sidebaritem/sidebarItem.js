@@ -11,8 +11,29 @@ class SidebarItemComponent extends React.Component {
     super();
   }
   render() {
+    const { _note, _index, classes, selectedNoteIndex } = this.props;
     return (
-      <div>Hello from the sidebar item</div>
+      <div key={_index}>
+        <ListItem
+          className={classes.ListItem}
+          selected={selectedNoteIndex === _index}
+          alignItems='flex-start'
+        >
+          <div 
+            className={classes.textSection}
+            onClick={() => this.selectNote(_note, _index)}
+          >
+            <ListItemText
+              primary={_note.title}
+              secondary={removeHTMLTags(_note.body.substring(0, 30)) + '...'}
+            />
+          </div>
+          <DeleteIcon 
+            onClick={() => this.deleteNote(_note)}
+            className={classes.deleteIcon}
+          />
+        </ListItem>
+      </div>
     )
   }
 }
